@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefWidth="533.0" spacing="20.0" style="-fx-background-color: #162E50;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.weatherapplication.Controller">
+   <children>
+      <VBox maxWidth="1.7976931348623157E308">
+         <children>
+            <HBox maxWidth="1.7976931348623157E308">
+               <children>
+                  <VBox maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="cityLabel" maxWidth="1.7976931348623157E308" text="No Data" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="regionLabel" maxWidth="1.7976931348623157E308" text="No Data" textFill="#dfdfdf">
+                           <font>
+                              <Font name="Segoe UI Bold" size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" HBox.hgrow="NEVER">
+                     <children>
+                        <Label fx:id="weatherAlertLabel" maxWidth="1.7976931348623157E308" text="Weather Alert!" textFill="WHITE" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="weatherAlertDataLabel" layoutX="10.0" layoutY="34.0" maxWidth="1.7976931348623157E308" text="No Data" textFill="WHITE" VBox.vgrow="NEVER">
+                           <font>
+                              <Font name="Segoe UI" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="conditionImage" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@null" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="conditionLabel" text="No Data" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="temperatureLabel" text="0° C" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="48.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@img/humidity.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="humidityLabel" text="0%" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@img/wind.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="windSpeedLabel" text="0 km/h" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Circle fill="WHITE" radius="100.0" stroke="BLACK" strokeType="INSIDE" VBox.vgrow="ALWAYS">
+                     <effect>
+                        <BoxBlur height="255.0" iterations="3" width="255.0" />
+                     </effect>
+                  </Circle>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_LEFT" maxHeight="1.7976931348623157E308" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Button fx:id="updateTemperatureUnitBtn" mnemonicParsing="false" onAction="#updateTemperatureUnit" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FED058;" text="Celsuis">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="updateWindSpeedUnitBtn" layoutX="15.0" layoutY="10.0" mnemonicParsing="false" onAction="#updateWindSpeedUnit" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FED058;" text="KPH">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="BOTTOM_LEFT" layoutX="30.0" layoutY="175.0" maxHeight="1.7976931348623157E308" prefWidth="200.0">
+         <children>
+            <TextField fx:id="cityName" maxWidth="1.7976931348623157E308" minWidth="100.0" prefHeight="35.0" promptText="Search country..." HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#fetchData" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #FED058;" text="Fetch">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Segoe UI" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
